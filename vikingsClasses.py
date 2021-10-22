@@ -49,8 +49,51 @@ class Saxon(Soldier):
             return "A Saxon has died in combat"
 
 
-#class Saxon(Soldier):
 # War
 
+import random
+
+class War():
+    def __init__(self):
+        self.vikingArmy = []
+        self.saxonArmy = []
+
+    def addViking(self,oneviking):
+        vikingArmy.append(oneviking)
+
+    def addSaxon(self,onesaxon):
+        saxonArmy.append(onesaxon)
+    
+    def vikingAttack():
+        unsaxoncualquiera = random.choice(saxonArmy)
+        unvikingcualquiera = random.choice(vikingArmy)
+        
+        retorno = unsaxoncualquiera.receiveDamage(unvikingcualquiera.strength)
+
+        if unsaxoncualquiera.strength = < 0:
+            saxonArmy.remove(unsaxoncualquiera)
+        
+        return retorno
+
+    def saxonAttack():
+        unvikingcualquiera = random.choice(vikingArmy)
+        unsaxoncualquiera = random.choice(saxongArmy)
+        
+        retorno = unvikingcualquiera.receiveDamage(unsaxoncualquiera.strength)
+
+        if unvikingcualquiera.strength =< 0:
+            vikingArmy.remove(unvikingcualquiera)
+        
+        return retorno
+
+
+
+
+
+        
+
+
+        
+
 #class War:
- #   pass
+ 
