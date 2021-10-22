@@ -1,44 +1,56 @@
 
 # Soldier
-print(hola)
-quetal
-y = x
-suma = x+y
-ovejasdormidas = [True,  True,  True,  False,
-  True,  True,  True,  True ,
-  True,  False, True,  False,
-  True,  False, False, True ,
-  True,  True,  True,  True ,
-  False, False, True,  True]
 
-  type(ovejasdormidas)
 
-def count_sheeps(sheep):
-    ovejaspresentes = 0
-    for oveja in sheep:
-        if oveja is True:
-            ovejaspresentes += 1
-    return ovejaspresentes
+class Soldier():
+    
+    def __init__(self, health, strength):
+        self.health = health
+        self.strength = strength
 
-def (hola(9))
+    def attack(self):
+        return self.strength
 
-class Soldier:
-    pass
+    def receiveDamage(self,damage):
+        self.health -= damage
+        
 
 # Viking
 
 
-class Viking:
-    pass
+class Viking(Soldier):
+    def __init__(self, name, health, strength):
+        super().__init__(health, strength)
+        self.name = name
+
+    def receiveDamage(self, damage):
+        self.health -= damage
+        if self.health > 0:
+            return f"{self.name} has received {damage} points of damage"
+        else:
+            return f"{self.name} has died in act of combat"
+    
+    def battleCry(self):
+        return "Odin Owns You All!"
+
+
 
 # Saxon
 
+class Saxon(Soldier):
+    def __init__(self, health, strength):
+        super().__init__(health, strength)
+    
+    def receiveDamage(self, damage):
+        self.health -= damage
+        if self.health > 0:
+            return f"A Saxon has received {damage} points of damage"
+        else:
+            return "A Saxon has died in combat"
 
-class Saxon:
-    pass
 
+#class Saxon(Soldier):
 # War
 
-
-class War:
-    pass
+#class War:
+ #   pass
