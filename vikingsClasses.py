@@ -66,7 +66,7 @@ class War():
 
     def vikingAttack(self):
         unvikingcualquiera = random.choice(self.vikingArmy)
-        unsaxoncualquiera = random.choice(self.saxongArmy)
+        unsaxoncualquiera = random.choice(self.saxonArmy)
 
         retorno = unsaxoncualquiera.receiveDamage(unvikingcualquiera.strength)
 
@@ -74,17 +74,26 @@ class War():
             saxonArmy.remove(unsaxoncualquiera)
         
         return retorno
-
     
+    def saxonAttack(self):
+        unvikingcualquiera = random.choice(self.vikingArmy)
+        unsaxoncualquiera = random.choice(self.saxonArmy)
 
+        retorno = unvikingcualquiera.receiveDamage(unsaxoncualquiera.strength)
 
-
-
-
+        if unvikingcualquiera.strength <= 0:
+            saxonArmy.remove(unvikingcualquiera)
         
+        return retorno
 
+    def showStatus(self):
 
+        if len(self.saxonArmy) == 0:
+            print ('Vikings have won the war of the century!')
+
+        elif len(self.vikingArmy) == 0:
+            print('Saxons have fought for their lives and survive another day...')
         
-
-#class War:
- 
+        elif len(self.saxonArmy) >=1 and len(self.vikingArmy) >=1:
+            print('Vikings and Saxons are still in the thick of battle.')
+        
