@@ -106,7 +106,7 @@ vik0 = Viking("",0,0)
 viks = [vik1,vik2,vik3,vik4,vik5,vik6,vik7,vik8,vik9,vik0]
 
 i = 0
-for vik in viks:
+for vik in viks: #asignar la vida y el poder de forma random a los objetos de la clase
     vik.name = viking_names[i]
     vik.health = random.randrange(80,101)
     vik.strength = random.randrange(10,21)
@@ -143,26 +143,36 @@ for s in saxs:
 
 while (len(war2.vikingArmy) > 0) and (len(war2.saxonArmy) >0):
     #calcular qué ejército tiene menos "strength"
-    sumv = 0
-    sums = 0
+    sumv, sums = 0,0
     for v in war2.vikingArmy:
         sumv += v.strength
     for s in war2.saxonArmy:
         sums += s.strength
-    #print(sumv, sums)
 
-    #ataca el ejército que menos "strength" tiene
+    #ataca el ejército que menos "strength" tiene para equilibrar batalla.
     if sumv < sums:        
         
         print(f"vikings attack:\n{vik.name} yells: {vik.battleCry()}")
         print(war2.vikingAttack()) #en un archivo python cada vez que haces print ejectua la sentencia que printeas ¡¡Recuerda!!
         print(f"{war2.showStatus()}\n")
         
-    else:        
+    elif sumv > sums:        
         
         print(f"saxons attack: ")
         print(war2.saxonAttack())
         print(f"{war2.showStatus()}\n")
     
+    else: #if both armys have the same strength, chose the attack randomly
+
+        rattack = rattack = random.randrange(1,3)
+        if rattack == 1:
+            print(f"vikings attack:\n{vik.name} yells: {vik.battleCry()}")
+            print(war2.vikingAttack()) #en un archivo python cada vez que haces print ejectua la sentencia que printeas ¡¡Recuerda!!
+            print(f"{war2.showStatus()}\n")
+        else:
+            print(f"saxons attack: ")
+            print(war2.saxonAttack())
+            print(f"{war2.showStatus()}\n")
+
     if (len(war2.vikingArmy) == 0) or (len(war2.saxonArmy) == 0):
         break
