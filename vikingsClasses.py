@@ -59,32 +59,23 @@ class War():
         self.saxonArmy = []
 
     def addViking(self,oneviking):
-        vikingArmy.append(oneviking)
+        self.vikingArmy.append(oneviking)
 
     def addSaxon(self,onesaxon):
-        saxonArmy.append(onesaxon)
-    
-    def vikingAttack():
-        unsaxoncualquiera = random.choice(saxonArmy)
-        unvikingcualquiera = random.choice(vikingArmy)
-        
+        self.saxonArmy.append(onesaxon)
+
+    def vikingAttack(self):
+        unvikingcualquiera = random.choice(self.vikingArmy)
+        unsaxoncualquiera = random.choice(self.saxongArmy)
+
         retorno = unsaxoncualquiera.receiveDamage(unvikingcualquiera.strength)
 
-        if unsaxoncualquiera.strength = < 0:
+        if unsaxoncualquiera.strength <= 0:
             saxonArmy.remove(unsaxoncualquiera)
         
         return retorno
 
-    def saxonAttack():
-        unvikingcualquiera = random.choice(vikingArmy)
-        unsaxoncualquiera = random.choice(saxongArmy)
-        
-        retorno = unvikingcualquiera.receiveDamage(unsaxoncualquiera.strength)
-
-        if unvikingcualquiera.strength =< 0:
-            vikingArmy.remove(unvikingcualquiera)
-        
-        return retorno
+    
 
 
 
