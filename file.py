@@ -134,6 +134,7 @@ for sax in saxs:
 
 
 #create 1 class of the Class War that has a different result each time is run:
+import time
 war2 = War()
 
 for v in viks:
@@ -155,24 +156,28 @@ while (len(war2.vikingArmy) > 0) and (len(war2.saxonArmy) >0):
         print(f"vikings attack:\n{vik.name} yells: {vik.battleCry()}")
         print(war2.vikingAttack()) #en un archivo python cada vez que haces print ejectua la sentencia que printeas ¡¡Recuerda!!
         print(f"{war2.showStatus()}\n")
+        time.sleep(1)
         
     elif sumv > sums:        
         
         print(f"saxons attack: ")
         print(war2.saxonAttack())
         print(f"{war2.showStatus()}\n")
+        time.sleep(1)
     
     else: #if both armys have the same strength, chose the attack randomly
 
-        rattack = rattack = random.randrange(1,3)
+        rattack = random.randrange(1,3)
         if rattack == 1:
             print(f"vikings attack:\n{vik.name} yells: {vik.battleCry()}")
             print(war2.vikingAttack()) #en un archivo python cada vez que haces print ejectua la sentencia que printeas ¡¡Recuerda!!
             print(f"{war2.showStatus()}\n")
+            time.sleep(1)
         else:
             print(f"saxons attack: ")
             print(war2.saxonAttack())
             print(f"{war2.showStatus()}\n")
+            time.sleep(1)
 
     if (len(war2.vikingArmy) == 0) or (len(war2.saxonArmy) == 0):
         break
